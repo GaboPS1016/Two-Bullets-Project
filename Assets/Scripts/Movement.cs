@@ -15,7 +15,7 @@ public class Movement : MonoBehaviour
         moves.y = Input.GetAxis("Vertical");
         if (moves.x != 0 || moves.y != 0)
         {
-
+            player.transform.position += moves;
         }
         
     }
