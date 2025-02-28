@@ -5,6 +5,7 @@ public class Movement : MonoBehaviour
     public GameObject player;
     public Vector3 moves;
     public float speed = 8f;
+    public Vector2 dir;
     Camera cam;
     void Start ()
     {
@@ -21,7 +22,7 @@ public class Movement : MonoBehaviour
         }
 
         //Rotation
-        Vector2 dir = Input.mousePosition - cam.WorldToScreenPoint(player.transform.position);
+        dir = Input.mousePosition - cam.WorldToScreenPoint(player.transform.position);
         float ang = Vector2.SignedAngle(Vector2.up, dir);
         transform.rotation = Quaternion.AngleAxis(ang, Vector3.forward);
     }
